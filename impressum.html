@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Impressum</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+      }
+      .header-banner {
+        background-color: #4a7c59;
+        padding: 0 15px;
+        display: flex;
+        align-items: center;
+        height: 60px;
+        position: relative
+      }
+      .header-banner h1 {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0;
+        color: #000000;
+        font-size: 20px;
+        
+      }
+     
+      h1 {
+       text-align: center;
+     } 
+
+     h2 {
+       font-size: 20px;
+     }
+      .impressum-text {
+        margin: 20px;
+        font-size: 16px;
+      }
+
+    .zurueck-link {
+      display: inline-block;
+      background-color: #4a7c59;
+      margin: 30px;
+      text-decoration: none;
+      color: #000000;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+      .impressum-banner {
+        background-color: #4a7c59;
+        color: white;
+        text-align: center;
+        font-size: 12px;
+        padding: 15px;
+        margin-top: 40px;
+        line-height: 1.6;
+      }
+
+      .impressum-banner a {
+        color: white;
+        text-decoration: underline;
+      }
+
+      .impressum-banner a:hover {
+        color: #dddddd;
+      }
+      .menu-toggle {
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        transform: translateY(-50%);
+        width: 30px;
+        height: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+        z-index: 1100;
+      }
+
+      .menu-toggle div {
+        height: 4px;
+        background-color: white;
+        border-radius: 2px;
+      }
+
+
+      .side-menu {
+        position: fixed;
+        top: 0;
+        left: -200px;
+        width: 200px;
+        height: 100%;
+        background-color: #4a7c59;
+        padding-top: 60px;
+        transition: left 0.3s ease;
+        z-index: 1000;
+      }
+
+      .side-menu.open {
+        left: 0;
+      }
+
+      .side-menu a {
+        display: block;
+        color: white;
+        padding: 15px;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+      }
+
+      .side-menu a:hover {
+        background-color: #3a5f44;
+    </style>
+  </head>
+  <body>
+    <div class="header-banner">
+      <div class="menu-toggle" onclick="toggleMenue()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <h1>VEGAN FOR ONE</h1>    
+    </div>
+    <div class="side-menu" id="sideMenu">
+      <a href="index.html">Startseite</a>
+      <a href="ueber-mich.html">Über mich</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="Impressum.html">Impressum</a>
+    </div>
+    <h1>Impressum</h1>
+    <div class="impressum-text">
+    <p>
+      <h2>Inhaber</h2>
+     Theo Rößler
+      <br>
+      Vegan for One - Vegane Kost à la KLH
+      <br>
+      <h2>Adresse</h2>
+      Kiefernstraße 22
+      <br>
+      01097 Dresden
+      <br>
+      Deutschland
+      <br>
+      <h2>Kontakt</h2>
+      Mail: <a href="mailto:theoroessler@icloud.com">theoroessler@icloud.com</a> 
+      <br>
+      Telefon: <a href="tel:+491757115511">+49 175 7115511</a>
+      <br>
+        Instagram: <a href="https://www.instagram.com/theorsle" target="_blank">@theorsle</a>
+    </p>
+    </div>
+    <a href="index.html" class="zurueck-link">
+      <span class="pfeil">←</span> Zurück
+    </a>
+    <script>
+      function toggleMenue() {
+      const menu = document.getElementById('sideMenu');
+      menu.classList.toggle('open');
+      }
+    </script>
+    <footer class="impressum-banner">
+      <p>Kontakt: <a href="mailto:theoroessler@icloud.com">theoroessler@icloud.com</a></p>
+      <p>Instagram: <a href="https://www.instagram.com/theorsle" target="_blank">@theorsle</a></p>
+      <p>&copy; 2025 Vegane Kost à la KLH – Alle Rechte vorbehalten</p>
+      <p>Dies ist ein privates Projekt. Keine kommerzielle Nutzung.</p>
+
+
+    </footer>
+  </body>
+</html>
+

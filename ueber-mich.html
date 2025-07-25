@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ueber-mich</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+      }
+      
+    .header-banner {
+      background-color: #4a7c59;
+      padding: 0 15px;
+      display: flex;
+      align-items: center;
+      height: 60px;
+      position: relative;
+     }
+
+      .header-banner h1 {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0;
+        color: black;
+        font-size: 20px;
+      }
+      h2 {
+        font-size: 22px;
+        text-align: center;
+        margin-top: 20px;
+      }
+      
+      .zurueck-link {
+        display: inline-block;
+        background-color: #4a7c59;
+        margin: 30px;
+        text-decoration: none !important;
+        color: black;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.2s;
+      font-size: 16px;
+      }
+      .zurueck-link:hover {
+        background-color: #3a5f44;
+      }
+      .pfeil {
+        font-size: 24px;
+        line-height: 1;
+      }
+      
+      .develop-story {
+        text-align: justify;
+        margin: 20px;
+        font-size: 18px;
+      }
+      .impressum-banner {
+        background-color: #4a7c59;
+        color: white;
+        text-align: center;
+        font-size: 12px;
+        padding: 15px;
+        margin-top: 40px;
+        line-height: 1.6;
+      }
+
+      .impressum-banner a {
+        color: white;
+        text-decoration: underline;
+      }
+
+      .impressum-banner a:hover {
+        color: #dddddd;
+      }
+      .menu-toggle {
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        transform: translateY(-50%);
+        width: 30px;
+        height: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+        z-index: 1100;
+      }
+
+      .menu-toggle div {
+        height: 4px;
+        background-color: white;
+        border-radius: 2px;
+      }
+
+
+      .side-menu {
+        position: fixed;
+        top: 0;
+        left: -200px;
+        width: 200px;
+        height: 100%;
+        background-color: #4a7c59;
+        padding-top: 60px;
+        transition: left 0.3s ease;
+        z-index: 1000;
+      }
+
+      .side-menu.open {
+        left: 0;
+      }
+
+      .side-menu a {
+        display: block;
+        color: white;
+        padding: 15px;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+      }
+
+      .side-menu a:hover {
+        background-color: #3a5f44;
+      }
+    </style>
+  </head>
+  <body>
+  <div class="header-banner">
+    <div class="menu-toggle" onclick="toggleMenue()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <h1>VEGAN FOR ONE</h1>
+  </div>
+    <div class="side-menu" id="sideMenu">
+      <a href="index.html">Startseite</a>
+      <a href="ueber-mich.html">Über mich</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="Impressum.html">Impressum</a>
+    </div>
+    <h2>Über Mich</h2>
+    <div class="develop-story">
+    <p>Hey allesamt :), mein Name ist Theo und ich freue mich das ihr euch für meine Rezepte bzw meine kleine Seite interessiert. Ursprünglich wollte ich eigentlich nur etwas programmieren und ein wenig verstehen wie das ganze eigentlich funktioniert. Allerdings fand ich die nur theoriegebundenen Übungen etwas Fad und deshalb habe ich überlegt, was man praktisches selber programmieren könnte um das ganze Schritt für Schritt zu verstehen. <br>
+Die Idee kam mir dann, eine Webseite mit Veganen Rezepten zu erstellen damit meine Familie und Freunde diese nachkochen können. Da ich schon öfters nach ein oder zwei dieser Rezepte gefragt wurde, dachte ich mir, dass ich diese einfach mal hier zusammentrage. <br>
+    Die Rezepte auf dieser Webseite sind allesamt selbstkreirt bzw. abgewandelte Varianten von Internetrezepten. Zuhause sind sie meine go to's wenn ich nicht weiß was ich kochen soll. Deshalb liegt der Fokus auch auf bezahlbar, schnell, lecker und wenig aufwendig. Auch wichtig war mir, dass die rezepte für eine person gedacht sind da viele Rezepte im internet nur für 2 oder 4 personen angezeigt werden und ich des öfteren das Problem hatte, dass ich nur für mich Kochen wollte. Natürlich kann man die Gerichte auch in größeren Mengen kochen und Mealpreapen oder für mehrerer Leute zubereiten. <br>
+     </p>
+    </div>
+    <a href="index.html" class="zurueck-link">
+      <span class="pfeil">←</span> Zurück
+    </a>
+    <script>
+      function toggleMenue() {
+      const menu = document.getElementById('sideMenu');
+      menu.classList.toggle('open');
+      }
+    </script>
+    <footer class="impressum-banner">
+      <p>Kontakt: <a href="mailto:theoroessler@icloud.com">theoroessler@icloud.com</a></p>
+      <p>Instagram: <a href="https://www.instagram.com/theorsle" target="_blank">@theorsle</a></p>
+      <p>&copy; 2025 Vegane Kost à la KLH – Alle Rechte vorbehalten</p>
+      <p>Dies ist ein privates Projekt. Keine kommerzielle Nutzung.</p>
+
+
+    </footer>
+  </body>
+</html>

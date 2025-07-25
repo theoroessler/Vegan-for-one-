@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kontakt</title>
+<style >
+  body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+  .header-banner {
+    background-color: #4a7c59;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    position: relative;
+   }
+
+    .header-banner h1 {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 0;
+      color: black;
+      font-size: 20px;
+    }
+    h2 {
+      font-size: 22px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .zurueck-link {
+      display: inline-block;
+      background-color: #4a7c59;
+      margin: 30px;
+      text-decoration: none !important;
+      color: black;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+    font-size: 16px;
+    }
+    .zurueck-link:hover {
+      background-color: #3a5f44;
+    }
+    .pfeil {
+      font-size: 24px;
+      line-height: 1;
+    }
+  .impressum-banner {
+    background-color: #4a7c59;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    padding: 15px;
+    margin-top: 40px;
+    line-height: 1.6;
+  }
+
+  .impressum-banner a {
+    color: white;
+    text-decoration: underline;
+  }
+
+  .impressum-banner a:hover {
+    color: #dddddd;
+  }
+  .menu-toggle {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 1100;
+  }
+
+  .menu-toggle div {
+    height: 4px;
+    background-color: white;
+    border-radius: 2px;
+  }
+
+
+  .side-menu {
+    position: fixed;
+    top: 0;
+    left: -200px;
+    width: 200px;
+    height: 100%;
+    background-color: #4a7c59;
+    padding-top: 60px;
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+
+  .side-menu.open {
+    left: 0;
+  }
+
+  .side-menu a {
+    display: block;
+    color: white;
+    padding: 15px;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .side-menu a:hover {
+    background-color: #3a5f44;
+  }
+  .kontakt-text {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 20px;
+    font-size: 16px;
+  }
+
+  .kontakt-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #ffffff;
+    border-radius: 8px;
+  }
+
+  .kontakt-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .kontakt-form input,
+  .kontakt-form textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .kontakt-form button {
+    background-color: #4a7c59;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .kontakt-form button:hover {
+    background-color: #3a5f44;
+  }
+
+  #dankeText {
+    text-align: center;
+    color: green;
+    font-weight: bold;
+    display: none;
+    margin-top: 20px;
+  }
+</style> 
+  </head>
+  <body>
+    <div class="header-banner">
+      <div class="menu-toggle" onclick="toggleMenue()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>  
+        <h1>VEGAN FOR ONE</h1>
+    </div>
+    <div class="side-menu" id="sideMenu">
+      <a href="index.html">Startseite</a>
+        <a href="ueber-mich.html">Über mich</a>
+        <a href="Kontakt.html">Kontakt</a>
+        <a href="Impressum.html">Impressum</a>
+    </div>
+    <h2>Kontakt</h2>
+    <p class="kontakt-text">
+      Du hast Fragen, Anregungen oder Feedback? Schreib mir einfachüber dieses Formular - ich freue mich über jede Nachricht!
+    </p>
+
+    <form action="https://formspree.io/f/xnnzpjvz" method="POST" class="kontakt-form">
+      <label for="name">Dein Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Deine E-Mail:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="nachricht">Deine Nachricht:</label>
+      <textarea id="nachricht" name="message" rows="5" required></textarea>
+
+      <button type="submit">Nachricht senden</button>
+    </form>
+
+    <p id="dankeText" style="display: none;">Danke für dein Feedback! Ich melde mich so bald wie möglich.</p>
+    <p style="font-size: 12px; text-align: center; max-witdh: 600px; margin: 10px auto;">
+      Mit dem Absenden erklärst du dich damit einverstanden; dass deine Nachricht per E-mail an mich weitergeleitet wird. Deine Daten werden nicht gespeichert.
+    </p>
+    <a href="index.html" class="zurueck-link">
+      <span class="pfeil">←</span> Zurück
+      </a>
+    <script>
+      function toggleMenue() {
+        const menu = document.getElementById('sideMenu')
+        menu.classList.toggle('open')
+      }
+
+    </script>
+    <script>
+      const form = document.querySelector("form.kontakt-form");
+      const dankeText = document.getElementById("dankeText");
+
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        const data = new FormData(form);
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          form.reset();
+          form.style.display = "none";
+          dankeText.style.display = "block";
+        } else {
+          alert("Leider ist ein Fehler aufgetreten. Bitte versuche es später noch einmal.");
+        }
+      });
+    </script>
+    <footer class="impressum-banner">
+      <p>Kontakt: <a href="mailto:theoroessler@icloud.com">theoroessler@icloud.com</a></p>
+      <p>Instagram: <a href="https://www.instagram.com/theorsle" target="_blank">@theorsle</a></p>
+      <p>&copy; 2025 Vegane Kost à la KLH - Alle Rechte vorbehalten</p>
+      <p>Dies ist ein privates Projekt. Keine kommerzielle Nutzung</p>
+    </footer>
+
+  </body>
+</html>

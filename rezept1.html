@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tofu</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+    
+    .header-banner {
+      background-color: #4a7c59;
+      padding: 0 15px;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      height: 60px;
+      position: relative;
+    }
+
+    .header-banner h1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    color: #000000;
+    font-size: 20px;
+    text-align: center;
+    }
+
+    h2 {
+      font-size: 20px;
+      text-align: center;
+      text-decoration: underline;
+    }
+
+    .zutaten-tabelle {
+      margin: 0 auto;
+      border-collapse: separate;
+      border-spacing: 12px 8px;
+      font-size: 16px;
+      color: #222;
+    }
+
+    .zurueck-link {
+      display: inline-block;
+      background-color: #4a7c59;
+      margin: 30px;
+      text-decoration: none !important;
+      color: black;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+    font-size: 16px;
+    }
+    .zurueck-link:hover {
+      background-color: #3a5f44;
+    }
+    .pfeil {
+      font-size: 24px;
+      line-height: 1;
+    }
+    
+    .rezept-bild {
+      display: block;
+      margin: 20px auto;
+      width: 80%;
+      max-width: 400px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+  h3 {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 40px;
+    color: black;
+  }
+
+.zubereitung {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  line-height: 1.6;
+  font-size: 16px;
+  color: #222;
+}    
+
+.zubereitung li {
+  margin-bottom: 12px;
+} 
+
+    .impressum-banner {
+      background-color: #4a7c59;
+      color: white;
+      text-align: center;
+      font-size: 12px;
+      padding: 15px;
+      margin-top: 40px;
+      line-height: 1.6;
+    }
+
+    .impressum-banner a {
+      color: white;
+      text-decoration: underline;
+    }
+
+    .impressum-banner a:hover {
+      color: #dddddd;
+    }
+    .menu-toggle {
+      position: absolute;
+      top: 50%;
+      left: 15px;
+      transform: translateY(-50%);
+      width: 30px;
+      height: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      z-index: 1100;
+    }
+
+    .menu-toggle div {
+      height: 4px;
+      background-color: white;
+      border-radius: 2px;
+    }
+
+
+    .side-menu {
+      position: fixed;
+      top: 0;
+      left: -200px;
+      width: 200px;
+      height: 100%;
+      background-color: #4a7c59;
+      padding-top: 60px;
+      transition: left 0.3s ease;
+      z-index: 1000;
+    }
+
+    .side-menu.open {
+      left: 0;
+    }
+
+    .side-menu a {
+      display: block;
+      color: white;
+      padding: 15px;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .side-menu a:hover {
+      background-color: #3a5f44;
+    }
+  </style>
+</head>
+<body>
+  <div class="header-banner">
+    <div class="menu-toggle" onclick="toggleMenue()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <h1>VEGAN FOR ONE</h1>
+  </div>
+  <div class="side-menu" id="sideMenu">
+    <a href="index.html">Startseite</a>
+    <a href="ueber-mich.html">Über mich</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="Impressum.html">Impressum</a>
+  </div>
+  <h2>Tofu Teriyaki</h2>
+  <img src="Bilder/IMG_0191.JPG" alt="Tofu Teriaky" class="rezept-bild">
+  <h3>Zutaten</h3>
+  <div style="text-align: center; margin: 30px 0;">
+    <label for="portionenInput" style="margin-right: 10px; font-weight: bold;">Portionen:</label>
+    <input type="number" id="portionenInput" value="1" min="1" style="width: 60px; padding: 4px; text-align: center;">
+    <button onclick="aktualisierePortionen()" style="margin-left: 10px; padding: 6px 12px; background-color: #4a7c59; color: white; border: none; border-radius: 5px; cursor: pointer;">OK</button>
+  </div>
+  
+  <table class="zutaten-tabelle">
+    <tbody>
+      <tr>
+        <td><span class="menge" data-pro-menge="150">150</span> g</td>
+        <td>fester Tofu</td>
+      </tr>
+      <tr>
+        <td><span class="menge" data-pro-menge="100">100</span> g</td>
+        <td>Brokkoli</td>
+      </tr>
+      <tr>
+        <td><span class="menge" data-pro-menge="50">50</span> g</td>
+        <td>Quinoa (ungekocht)</td>
+      </tr>
+      <tr>
+        <td><span class="menge" data-pro-menge="1">1</span> EL</td>
+        <td>neutrales Öl (z. B. Raps- oder Sonnenblumenöl)</td>
+      </tr>
+      <tr>
+        <td colspan="2" style="font-weight: bold; padding-top: 10px;">Für die Teriyaki-Sauce:</td>
+      </tr>
+      <tr>
+        <td><span class="menge" data-pro-menge="1.5">1.5</span> EL</td>
+        <td>Sojasauce</td>
+      </tr>
+      <tr>
+        <td><span class="menge" data-pro-menge="1.5">1.5</span> EL</td>
+        <td>Wasser</td>
+      </tr>
+      <tr>
+        <td><span class="menge" data-pro-menge="1">1</span> TL</td>
+        <td>Agavendicksaft oder Ahornsirup</td>
+      </tr>
+      <tr>
+        <td><span class="menge" data-pro-menge="1">1</span> TL</td>
+        <td>Reisessig oder normaler Essig</td>
+      </tr>
+      <tr>
+        <td><span class="menge" data-pro-menge="1">1</span> TL</td>
+        <td>Speisestärke + 1 TL Wasser zum Anrühren</td>
+      </tr>
+      <tr>
+        <td><span class="menge" data-pro-menge="1">1</span> kleine</td>
+        <td>Knoblauchzehe, fein gehackt</td>
+      </tr>
+      <tr>
+        <td><span class="menge" data-pro-menge="1">1</span> TL</td>
+        <td>frisch geriebener Ingwer</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>Zubereitung</h3>
+  <ol class="zubereitung">
+    <li>Quinoa waschen und mit der dreifachen Menge Wasser oder Gemüsebrühe kurz aufkochen, dann 15 Minuten bei niedriger Hitze mit geschlossenem Deckel köcheln lassen. Gelegentlich umrühren.</li>
+    <li>Tofu auspressen und in Würfel schneiden.</li>
+    <li>Alle Zutaten für die Teriyaki-Sauce (außer Stärkelösung) in einer Schüssel vermengen.</li>
+    <li>Brokkoli waschen und in gewünschte Stücke schneiden.</li>
+    <li>Öl in einer Pfanne erhitzen, Tofu scharf anbraten, bis er goldbraun ist. Für mehr Knusprigkeit Tofuwürfel vorher in Stärke wälzen. Anschließend aus der Pfanne nehmen.</li>
+    <li>Hitze reduzieren. Sauce in die Pfanne geben und bei niedriger Temperatur leicht einkochen lassen. Stärkelösung nach und nach zugeben, bis die Sauce dickflüssig wird.</li>
+    <li>Tofu wieder in die Pfanne geben und gut mit der Sauce vermengen.</li>
+    <li>Brokkoli nach Belieben kurz in Salzwasser blanchieren oder direkt mit in die Pfanne geben. Mit Deckel ziehen lassen, bis der Brokkoli bissfest ist.</li>
+    <li>Quinoa, Brokkoli und Tofu zusammen anrichten. Nach Belieben mit Sesam oder Frühlingszwiebeln servieren.</li>
+  </ol>
+  <a href="index.html" class="zurueck-link">
+    <span class="pfeil">←</span> Zurück
+  </a>
+  <script>
+    function aktualisierePortionen() {
+      const portionen = parseFloat(document.getElementById('portionenInput').value);
+      document.querySelectorAll('.menge').forEach(function (element) {
+            const proMenge = parseFloat(element.getAttribute('data-pro-menge'));
+            if (!isNaN(proMenge)) {
+              const neueMenge = proMenge * portionen;
+              element.textContent = Number.isInteger(neueMenge) ? neueMenge : neueMenge.toFixed(1);
+            }
+          });
+        }
+      </script>
+
+  <script>
+    function toggleMenue() {
+    const menu = document.getElementById('sideMenu');
+    menu.classList.toggle('open');
+    }
+  </script>
+
+  
+  <footer class="impressum-banner">
+    <p>Kontakt: <a href="mailto:theoroessler@icloud.com">theoroessler@icloud.com</a></p>
+    <p>Instagram: <a href="https://www.instagram.com/theorsle" target="_blank">@theorsle</a></p>
+    <p>&copy; 2025 Vegane Kost à la KLH – Alle Rechte vorbehalten</p>
+    <p>Dies ist ein privates Projekt. Keine kommerzielle Nutzung.</p>
+
+
+  </footer>
+</body>
+</html>
