@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="de">
+ <head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>bildquellen</title>
+   <style>
+     body {
+         font-family: sans-serif;
+         margin: 0;
+         padding: 0;
+         background-color: #f9f9f9;
+       }
+
+     .header-banner {
+       background-color: #4a7c59;
+       padding: 0 15px;
+       display: flex;
+       align-items: center;
+       height: 60px;
+       position: relative;
+      }
+
+       .header-banner h1 {
+         position: absolute;
+         left: 50%;
+         transform: translateX(-50%);
+         margin: 0;
+         color: black;
+         font-size: 20px;
+       }
+       h2 {
+         font-size: 22px;
+         text-align: center;
+         margin-top: 20px;
+       }
+
+       .zurueck-link {
+         display: inline-block;
+         background-color: #4a7c59;
+         margin: 30px;
+         text-decoration: none !important;
+         color: black;
+       padding: 10px 20px;
+       border-radius: 8px;
+       font-weight: bold;
+       transition: background-color 0.2s;
+       font-size: 16px;
+       }
+       .zurueck-link:hover {
+         background-color: #3a5f44;
+       }
+       .pfeil {
+         font-size: 24px;
+         line-height: 1;
+       }
+     .impressum-banner {
+       background-color: #4a7c59;
+       color: white;
+       text-align: center;
+       font-size: 12px;
+       padding: 15px;
+       margin-top: 40px;
+       line-height: 1.6;
+     }
+
+     .impressum-banner a {
+       color: white;
+       text-decoration: underline;
+     }
+
+     .impressum-banner a:hover {
+       color: #dddddd;
+     }
+     .menu-toggle {
+       position: absolute;
+       top: 50%;
+       left: 15px;
+       transform: translateY(-50%);
+       width: 30px;
+       height: 25px;
+       display: flex;
+       flex-direction: column;
+       justify-content: space-between;
+       cursor: pointer;
+       z-index: 1100;
+     }
+
+     .menu-toggle div {
+       height: 4px;
+       background-color: white;
+       border-radius: 2px;
+     }
+
+
+     .side-menu {
+       position: fixed;
+       top: 0;
+       left: -200px;
+       width: 200px;
+       height: 100%;
+       background-color: #4a7c59;
+       padding-top: 60px;
+       transition: left 0.3s ease;
+       z-index: 1000;
+     }
+
+     .side-menu.open {
+       left: 0;
+     }
+
+     .side-menu a {
+       display: block;
+       color: white;
+       padding: 15px;
+       text-decoration: none;
+       border-bottom: 1px solid rgba(255,255,255,0.2);
+     }
+
+     .side-menu a:hover {
+       background-color: #3a5f44;
+     }
+   </style>
+ </head> 
+  <body>
+    <div class="header-banner">
+      <div class="menu-toggle" onclick="toggleMenue()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+      <h1>VEGAN FOR ONE</h1>
+    </div>
+    <div class="side-menu" id="sideMenu">
+      <a href="index.html">Startseite</a>
+      <a href="ueber-mich.html">Über mich</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="Impressum.html">Imressum</a>
+      <a href="quellen.html">Bildquellen</a>
+    </div>
+    <h2>Bildquellen</h2>
+    <div class="main">
+      <ul>
+        <li>Tofu-Teriyakibild von <a href="https://www.eatclub.de/wp-content/uploads/2023/10/brokkoli-quinoa-bowl.jpeg" target="_blank">Eat-Club</a></li>
+        <li>Blumenkohlcurrybild von <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.leckerschmecker.me%2Fblumenkohl-kichererbsen-curry-aus-dem-backofen-a-c%2F63743511498933&psig=AOvVaw3jBB38AND6g6sSA48u_4tM&ust=1753629163594000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCKDzhfzn2o4DFQAAAAAdAAAAABAE" target="_blank">Leckerschmecker</a></li>
+        <li>Bohnenpfannenbild von <a href="https://www.google.com/imgres?q=bohnenpfanne%20mediterran&imgurl=https%3A%2F%2Fjulesmenu.de%2Fwp-content%2Fuploads%2Fitalienische-weisse-bohnenpfanne-1.jpg&imgrefurl=https%3A%2F%2Fjulesmenu.de%2Fweisse-bohnenpfanne%2F&docid=-mBR8H-DEM3F3M&tbnid=QTv0pmF-g1lWuM&vet=12ahUKEwiH8J2n6NqOAxUxhf0HHZodNfkQM3oECBIQAA..i&w=1200&h=1800&hcb=2&ved=2ahUKEwiH8J2n6NqOAxUxhf0HHZodNfkQM3oECBIQAA" target="_blank">Jule's Menue</a></li>
+        <li>Avocadopastabild von <a href="https://www.google.com/imgres?q=avocado%20pasta&imgurl=https%3A%2F%2Fveganheaven.org%2Fwp-content%2Fuploads%2F2020%2F01%2FAvocado-Pasta-Sauce-1.jpg&imgrefurl=https%3A%2F%2Fveganheaven.org%2Frecipe%2Favocado-pasta-sauce%2F&docid=dBhAfHMlDFJKEM&tbnid=13VcsZSv_WbjDM&vet=12ahUKEwjQtNb16NqOAxUIh_0HHa9qGs8QM3oECC4QAA..i&w=720&h=720&hcb=2&ved=2ahUKEwjQtNb16NqOAxUIh_0HHa9qGs8QM3oECC4QAA" target="_blank">Vegan Heaven</a></li>
+      </ul>
+    </div>
+
+    <script>
+      function toggleMenue() {
+      const menu = document.getElementById('sideMenu');
+      menu.classList.toggle('open');
+      }
+    </script>
+
+    <footer class="impressum-banner">
+    <p>Kontakt: <a href="mailto:theoroessler@icloud.com">theoroessler@icloud.com</a></p>
+    <p>Instagram: <a href="https://www.instagram.com/theorsle" target="_blank">@theorsle</a></p>
+    <p>&copy; 2025 Vegane Kost à la KLH – Alle Rechte vorbehalten</p>
+    <p>Dies ist ein privates Projekt. Keine kommerzielle Nutzung.</p>
+      </footer>
+  </body>
+</html>
